@@ -26,10 +26,15 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
+[m, n] = size(X); % m and n now hold the matrix' dimensions
 
-
-
-
+for i = 1:n % for each feature
+    mu(i) = mean(X_norm(:,i)); % computes mean of current feature
+    meanArray = mu(i) * ones(m, 1);
+    X_norm(:,i) = X_norm(:,i) - meanArray; % subtracts mean from all examples
+    sigma(i) = std(X_norm(:,i)); % computes std deviation
+    X_norm(:,i) = X_norm(:,i)./ sigma(i); % divides all examples by std deviation
+end
 
 
 

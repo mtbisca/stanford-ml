@@ -12,9 +12,8 @@ J = 0;
 % ====================== YOUR CODE HERE ======================
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
-
-
-
+innerSum = X * theta - y;
+J = sum(innerSum.^2) / (2 * m); 
 
 
 % =========================================================================
